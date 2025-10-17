@@ -1,0 +1,509 @@
+:root {
+    --primary-color: #004d40; /* Dark Teal */
+    --secondary-color: #ffab40; /* Amber */
+    --light-color: #f4f4f4;
+    --dark-color: #333;
+
+    --size: 280px; /* circle diameter */
+    --ring-size: calc(var(--size) + 36px);
+    --speed: 6s; /* rotation duration */
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #fff;
+    color: var(--dark-color);
+}
+
+header {
+    background: #fff;
+    color: var(--dark-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo a {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+header nav a {
+    color: var(--dark-color);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
+}
+
+main {
+    padding: 0 2rem;
+}
+
+section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    background: linear-gradient(45deg, var(--primary-color), #00796b);
+    color: #fff;
+    padding: 0 4rem;
+}
+
+#hero .hero-text {
+    max-width: 600px;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#hero h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-right: 1rem;
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: var(--dark-color);
+}
+
+#hero .hero-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#about .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#about .mission {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--light-color);
+    border-left: 5px solid var(--primary-color);
+}
+
+#experience .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#experience .experience-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#experience .experience-card p {
+    text-align: left;
+    font-size: medium;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    font-weight: 200;
+    line-height: 1.6;
+}
+
+#experience .experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#experience .company-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+#experience .date {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#skills .skills-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#skills .skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+#skills .skill-category ul {
+    list-style: none;
+}
+
+#skills .skill-category li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#skills .skill-category i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+#projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#projects .project-card {
+    background: var(--light-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+#projects .project-card:hover {
+    transform: translateY(-10px);
+}
+
+#projects .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#projects .project-card h3 {
+    padding: 1rem;
+}
+
+#projects .project-card p {
+    padding: 0 1rem;
+}
+
+#projects .project-links {
+    padding: 1rem;
+}
+
+#projects .project-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#achievements .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#achievements .achievement-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-color);
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#achievements .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#achievements .achievement-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+#aspirations .aspirations-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+#contact {
+    text-align: center;
+}
+
+#contact .contact-info {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+#contact .contact-info p {
+    margin-bottom: 1rem;
+}
+
+#contact .contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--dark-color);
+    color: #fff;
+}
+
+.heroFooter {
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    gap: 20px;
+}
+
+.heroFooter h2 {
+    font-size: medium;
+    text-align: left;
+}
+
+.heroFooter a {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.heroFooter li {
+    list-style: none;
+}
+
+.heroFooter p {
+    font-size: medium;
+    line-height: 1.6;
+    color: var(--light-color);
+    text-align: left;
+}
+
+/* Responsive Navigation */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-color);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header nav a {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+.stage{
+    position:relative;
+    width:var(--ring-size);
+    height:var(--ring-size);
+    display:grid;
+    place-items:center;
+    user-select:none;
+}
+
+/* the image in the center */
+.avatar{
+    width:var(--size);
+    height:var(--size);
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+    z-index:2;
+    box-shadow:0 8px 30px rgba(2,6,23,0.7);
+    border:4px solid rgba(255,255,255,0.04);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* The rotating ring */
+.ring{
+    position:absolute;
+    width:var(--ring-size);
+    height:var(--ring-size);
+    border-radius:50%;
+    z-index:1;
+    display:block;
+    pointer-events:none;
+    /* create a colorful glowing arc using conic-gradient */
+    background:
+    conic-gradient(from 90deg,
+        rgba(255,255,255,0.95),
+        rgba(255,200,80,0.95) 20deg,
+        rgba(255,65,108,0.95) 70deg,
+        rgba(126,58,255,0.95) 130deg,
+        rgba(64,214,255,0.95) 200deg,
+        rgba(255,255,255,0.95) 260deg,
+        rgba(255,200,80,0.95) 300deg,
+        rgba(255,65,108,0.95) 330deg,
+        rgba(126,58,255,0.95) 360deg
+    );
+
+    /* mask out the inner part so it becomes a ring */
+    -webkit-mask: radial-gradient(circle, transparent calc(50% - 16px), black calc(50% - 12px));
+    mask: radial-gradient(circle, transparent calc(50% - 16px), black calc(50% - 12px));
+
+    filter:blur(6px) saturate(130%);
+    opacity:0.95;
+
+    animation:spin linear infinite var(--speed);
+    transform-origin:50% 50%;
+}
+
+/* a sharper inner ring for crisp highlight */
+.ring::after{
+    content:"";
+    position:absolute;inset:0;border-radius:50%;
+    -webkit-mask: radial-gradient(circle, transparent calc(50% - 22px), black calc(50% - 18px));
+    mask: radial-gradient(circle, transparent calc(50% - 22px), black calc(50% - 18px));
+    background: conic-gradient(from 80deg, rgba(255,255,255,0.85), rgba(255,120,80,0.8), rgba(120,60,255,0.85));
+    filter:blur(2px) saturate(120%);
+    mix-blend-mode:screen;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
+
+/* Hover effect: slow down and brighten on hover */
+.stage:hover .ring{animation-duration:calc(var(--speed) / 2);filter:blur(4px) saturate(170%);opacity:1}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 15px;
+}
+.social-icons img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-left: 8px;
+            transition: transform 0.3s;
+            vertical-align: middle;
+        }
+.social-icons img:hover {
+            transform: scale(1.2);
+        }
+/*Icons in social*/
+.social img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+    cursor: pointer;
+    border-radius: 50%;
+    gap: 40px;
+}
+
+.social:hover img {
+    transform: scale(1.2);
+}
